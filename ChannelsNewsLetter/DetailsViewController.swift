@@ -67,37 +67,25 @@ class DetailsViewController: UIViewController, UITextViewDelegate{
             }
             
         }
-//            let name = "DetailScreen"
-//            let tracker = GAI.sharedInstance().defaultTracker
-//            tracker.set(kGAIScreenName, value: name)
-//            
-//            let builder = GAIDictionaryBuilder.createScreenView()
-//            tracker.send(builder.build() as [NSObject : AnyObject])
-        
+            let name = "DetailScreen"
+            let tracker = GAI.sharedInstance().defaultTracker
+            tracker.set(kGAIScreenName, value: name)
+            
+            let builder = GAIDictionaryBuilder.createScreenView()
+            tracker.send(builder.build() as [NSObject : AnyObject])
+    }
+
+  
+  
+    override func viewDidAppear(animated: Bool) {
         let fixedWidth = DetailsViewer.frame.size.width
         DetailsViewer.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
         let newSize = DetailsViewer.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
         var newFrame = DetailsViewer.frame
         newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
         DetailsViewer.frame = newFrame
-        heightConstraint.constant = newFrame.height + 80
-        DetailsViewer.delegate = self
-//        print(DetailsViewer)
-//        DetailsViewer.sizeToFit()
+        heightConstraint.constant = newFrame.height
         
-//        func TextViewDidEndEditing(DetailsViewer: UITextView) -> Bool {
-//        DetailsViewer.frame.size.height = 1
-//        DetailsViewer.frame.size = DetailsViewer.sizeThatFits(CGSizeZero)
-//        
-//    return true
-//    }
-//        print("Test")
-    }
-
-  
-  
-    override func viewDidAppear(animated: Bool) {
-        // super.viewDidAppear(animated)
         
     }
     override func viewDidLoad() {

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ChannelsNewsLetter
+//@testable import ChannelsNewsLetter
 
 class ChannelsNewsLetterTests: XCTestCase {
     

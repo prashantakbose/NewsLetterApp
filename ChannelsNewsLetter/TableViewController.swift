@@ -12,16 +12,18 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Articles"
+        self.navigationController!.navigationBar.barTintColor = UIColor.myNavColor()
         
         if editionName != nil
         {
             loaddata(editionName!)
         }
+        self.tableView.rowHeight = 45.0
     }
     
     func loaddata(rowIndex: Int){
         
-        Alamofire.request(.GET, "http://178.62.83.50/articlev6.json")
+        Alamofire.request(.GET, "https://s3-eu-west-1.amazonaws.com/channels-newsletter-assets/json/article.json")
             .responseJSON { response in
                 
                 //get json from response data
@@ -58,14 +60,17 @@ class TableViewController: UITableViewController {
         }
         
     }
-//    override func viewWillAppear(animated: Bool) {
-//        let name = "ArticleScreen"
-//        let tracker = GAI.sharedInstance().defaultTracker
-//        tracker.set(kGAIScreenName, value: name)
-//        
-//        let builder = GAIDictionaryBuilder.createScreenView()
-//        tracker.send(builder.build() as [NSObject : AnyObject])
-//    }
+    override func viewWillAppear(animated: Bool) {
+        let name = "ArticleScreen"
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
+        if let row = tableView.indexPathForSelectedRow {
+            self.tableView.deselectRowAtIndexPath(row, animated: false)
+        }
+    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -84,13 +89,15 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = article.name
         cell.detailTextLabel?.text = article.subheading
         
-        let CellImage = UIImage(named: "articleicon")
-        cell.imageView?.image = CellImage
+        cell.textLabel!.highlightedTextColor = UIColor.whiteColor()
+        cell.detailTextLabel?.highlightedTextColor = UIColor.whiteColor()
+        
+        let myCustomSelectionColorView = UIView()
+        myCustomSelectionColorView.backgroundColor = UIColor.myBlueColor()
+        cell.selectedBackgroundView = myCustomSelectionColorView
         
         return cell
     }
-    
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // Configure tracker from GoogleService-Info.plist.
         var configureError:NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
@@ -24,50 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let gai = GAI.sharedInstance()
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
         gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
-    
-//        let firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-//        firstAction.identifier  = "First_Action"
-//        firstAction.title = "First Action"
-//        
-//        firstAction.activationMode = UIUserNotificationActivationMode.Background
-//        firstAction.destructive = true
-//        firstAction.authenticationRequired = false
-//        
-//        let secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-//        secondAction.identifier  = "Second_Action"
-//        secondAction.title = "Second Action"
-//        
-//        secondAction.activationMode = UIUserNotificationActivationMode.Foreground
-//        secondAction.destructive = false
-//        secondAction.authenticationRequired = false
-//        
-//        let thirdAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-//        thirdAction.identifier  = "Third_Action"
-//        thirdAction.title = "Third Action"
-//        
-//        thirdAction.activationMode = UIUserNotificationActivationMode.Background
-//        thirdAction.destructive = false
-//        thirdAction.authenticationRequired = false
-//        
-//        //category
-//        
-//        let FirstCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-//        FirstCategory.identifier = "First_Category"
-//        
-//        let DefaultActions:NSArray = [firstAction, secondAction, thirdAction]
-//        let MinimalActions:NSArray = [firstAction, secondAction]
-//        
-//        FirstCategory.setActions(DefaultActions as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Default)
-//        FirstCategory.setActions(MinimalActions as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Minimal)
-//        
-//        let categories:NSSet = NSSet(object: FirstCategory)
-//        
-//        
-//        let notificationTypes: UIUserNotificationType = UIUserNotificationType.Alert; UIUserNotificationType.Badge
-//        let NotiSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categories as? Set<UIUserNotificationCategory>)
-//        UIApplication.sharedApplication().registerUserNotificationSettings(NotiSettings)
-//        //ACTIONS
         
+        // Change status bar color globally
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         return true
     }

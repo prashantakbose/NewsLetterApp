@@ -510,6 +510,7 @@
 			baseConfigurationReference = 611D6048E7F98AD74C3C54A1 /* Pods-ChannelsNewsLetter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChannelsNewsLetter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Telefonica.ChannelsNewsLetter;
@@ -523,6 +524,7 @@
 			baseConfigurationReference = D9F474805C02F5958D1B9EDC /* Pods-ChannelsNewsLetter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",

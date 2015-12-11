@@ -87,7 +87,7 @@ class TableViewController: UITableViewController {
         
         //set cell text label to article name
         cell.textLabel?.text = article.name
-        cell.detailTextLabel?.text = article.subheading
+        cell.detailTextLabel?.text = article.author
         
         cell.textLabel!.highlightedTextColor = UIColor.whiteColor()
         cell.detailTextLabel?.highlightedTextColor = UIColor.whiteColor()

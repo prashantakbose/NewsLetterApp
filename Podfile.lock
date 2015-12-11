@@ -16,7 +16,7 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
-  - SwiftyJSON (2.3.1)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyJSON:
-    :commit: 5ccffc14df519cf29b8dfbc7c1698373f2a6da40
+    :commit: 8e618c8baf6323a5079c6549bb38d48357b31630
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
@@ -40,6 +40,6 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
-  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

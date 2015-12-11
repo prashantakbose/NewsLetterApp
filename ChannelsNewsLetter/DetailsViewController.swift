@@ -14,7 +14,10 @@ extension String {
     }
 }
 
-class DetailsViewController: UIViewController, UITextViewDelegate{
+class DetailsViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate{
+    
+    
+    @IBOutlet weak var ScrollView: UIScrollView!
     
     @IBOutlet weak var TitleofArt: UILabel!
     
@@ -85,13 +88,17 @@ class DetailsViewController: UIViewController, UITextViewDelegate{
         newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
         DetailsViewer.frame = newFrame
         heightConstraint.constant = newFrame.height
-        
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+      
         // Do any additional setup after loading the view.
+    }
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return Images
     }
     
     override func didReceiveMemoryWarning() {

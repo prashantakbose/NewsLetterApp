@@ -29,6 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Change status bar color globally
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        let credentialsProvider = AWSCognitoCredentialsProvider(
+            regionType: AWSRegionType.USEast1, identityPoolId: cognitoIdentityPoolId)
+        
+        let defaultServiceConfiguration = AWSServiceConfiguration(
+            region: AWSRegionType.USEast1, credentialsProvider: credentialsProvider)
+        
+        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
+        
         return true
     }
 
